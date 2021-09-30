@@ -32,9 +32,9 @@ console.log("after");
 提示: 手動自己畫畫看整段程式的執行過程，call stack 的變化為何？<br>
 A:<br>
 請問以下執行結果為何？<br>
-1~100<br>
+1\~100<br>
 after<br>
-101~500<br>
+101\~500<br>
 after 會在什麼數字後印出？<br>
 100<br>
 為什麼？<br>
