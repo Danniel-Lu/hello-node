@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rainbow-callback</title>
+    <style>
+        #rainbow {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rainbow"></div>
+    <script>
+        let rainbow = document.getElementById("rainbow")
+
+        let changeColor = function (color, timer) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (color !== '') {
+                        resolve(color)
+                    }
+                    else {
+                        reject()
+                    }
+                }, timer)
+            })
+        }
+
+        changeColor("#FF0000", 3000)
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#FF7D00", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#FFFF00", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#00FF00", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#0000FF", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#00FFFF", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+                return changeColor("#FF00FF", 3000)
+            })
+            .then((data) => {
+                rainbow.style.background = data
+            })
+            .catch((err) => {
+                console.error("rejected", err)
+            })
+    </script>
+</body>
+
+</html>
